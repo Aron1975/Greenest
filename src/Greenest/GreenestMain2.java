@@ -13,9 +13,9 @@ public class GreenestMain2 {
         Palmer p2 = new Palmer("Olof", 1);
         Kaktusar k1 = new Kaktusar("Igge", 0.2);
         KottatandeVaxter kv1 = new KottatandeVaxter("MeatLoaf", 0.7);
-        //Kaktusar k2 = new Kaktusar("Sticky", 2.7);
+        Kaktusar k2 = new Kaktusar("Olof", 2.7);
         Vaxter v1 = new KottatandeVaxter();
-        System.out.println(v1.getVatskeTyp());
+        System.out.println(v1.vaxtInfo());
         //v1.printMe();
         //v1.setNamn("Sticky");
         //v1.setLangd(2);
@@ -23,16 +23,16 @@ public class GreenestMain2 {
         System.out.println("Ord: " + p1.getVatskeTyp().ordinal());
         System.out.println(k1.vaxtInfo());
         k1.setLangd(3);
-        System.out.println(k1.vaxtInfo());
+        System.out.println(k1.toString());
         System.out.println(k1.getVaxtTyp());
         vaxterList.add(p1);
         vaxterList.add(p2);
         vaxterList.add(k1);
         vaxterList.add(kv1);
-        //vaxterList.add(k2);
+        vaxterList.add(k2);
         //vaxterList.add(v1);
 
-        //skrivUtAllaVaxter();
+        skrivUtAllaVaxter();
 
         while (true) {
             while (true) {
@@ -74,19 +74,20 @@ public class GreenestMain2 {
     }
 
     public void skrivUtAllaVaxter() {
+        String message = "";
         for (Vaxter v : vaxterList) {
-            //System.out.println(v.vaxtInfo());
-            JOptionPane.showMessageDialog(null, v.vaxtInfo());
-            //skrivUtVaxter(v);
+            message = message.concat(v.vaxtInfo() + "\n");
         }
+        JOptionPane.showMessageDialog(null, message);
+
     }
 
     public void skrivUtValdVaxt(String namn) {
         String message = "";
         for (Vaxter v : vaxterList) {
             if (v.getNamn().equals(namn)) {
-                message = message.concat(String.format("%s ska ha %.2f liter %s/dag.\n",
-                        v.getNamn(), v.raknaUtVatskebehov(), v.getVatskeTyp().sort));
+                message = message.concat(String.format("%sen %s ska ha %.2f liter %s/dag.\n",
+                        v.getVaxtTyp(), v.getNamn(), v.raknaUtVatskebehov(), v.getVatskeTyp().sort));
             }
         }
         JOptionPane.showMessageDialog(null, message);

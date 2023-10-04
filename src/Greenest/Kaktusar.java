@@ -1,21 +1,19 @@
 package Greenest;
 
-public class Kaktusar extends Vaxter{//} implements VaxtInterface { //implementerar interface
+public class Kaktusar extends Vaxter{
 
-    private String vaxtTyp = "Kaktus";
+    private String vaxtTyp = "Kaktus";  //Inkapsling, privata variabler, mm..
 
-    //private String vatskeTyp = "Mineralvatten";  //Inkapsling
     private VatskeTyp vatskeTyp = VatskeTyp.MINERALVATTEN;
 
-    //private double vatskebehov;
-    public Kaktusar() {
+    public Kaktusar() {             //Polymorfism
     }
-    //Polymorfism
-    public Kaktusar(String namn) {
+
+    public Kaktusar(String namn) {  //Polymorfism
         super(namn);
     }
-    //Polymorfism
-    public Kaktusar(String namn, double langd) {
+
+    public Kaktusar(String namn, double langd) {    //Polymorfism
         super(namn, langd);
 
     }
@@ -24,27 +22,24 @@ public class Kaktusar extends Vaxter{//} implements VaxtInterface { //implemente
         return vatskeTyp;
     }
 
-    public String getVaxtTyp() {
+    public String getVaxtTyp() {         //Polymorfism, inkapsling
         return vaxtTyp;
     }
 
     @Override
     public double raknaUtVatskebehov() {    //Polymorfism
-       /* double vatskebehov;
-        vatskebehov = (double)2/100;
-        return vatskebehov;*/
         return (double)2/100;
     }
 
-    @Override
-    public void printMe() {             //Polymorfism
+    @Override                       //Polymorfism
+    public void printMe() {
         System.out.println("Kaktus{" +
                 "namn='" + this.getNamn() + '\'' +
                 ", langd=" + this.getLangd() +
                 '}');
     }
 
-    @Override
+    @Override                       //Polymorfism
     public String vaxtInfo() {
         String message = String.format("Växttyp: " + this.vaxtTyp +
                 ", namn='" + this.getNamn() + '\'' +

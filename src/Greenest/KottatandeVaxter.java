@@ -1,10 +1,10 @@
 package Greenest;
 
-public class KottatandeVaxter extends Vaxter{//} implements VaxtInterface { //implementerar interface
+public class KottatandeVaxter extends Vaxter{
 
-    private String vaxtTyp = "Köttätande växt";
-    //private String vatskeTyp = "Proteindryck";  //Inkapsling
-    private VatskeTyp vatskeTyp = VatskeTyp.PROTEINDRYCK;
+    private String vaxtTyp = "Köttätande växt";     //Inkapsling
+
+    private VatskeTyp vatskeTyp = VatskeTyp.PROTEINDRYCK;   //Inkapsling
 
     public KottatandeVaxter() { //Polymorfism
     }
@@ -17,31 +17,28 @@ public class KottatandeVaxter extends Vaxter{//} implements VaxtInterface { //im
         super(namn, langd);
     }
 
-    public VatskeTyp getVatskeTyp() {  //Inkapsling, polymorfism
+    public VatskeTyp getVatskeTyp() {   //Inkapsling, polymorfism
         return vatskeTyp;
     }
 
-    public String getVaxtTyp() {
+    public String getVaxtTyp() {        //Inkapsling, polymorfism
         return vaxtTyp;
     }
 
-    @Override
-    public double raknaUtVatskebehov() {    //Polymorfism
-       /* double vatskebehov;
-        vatskebehov = 0.1 + (0.2 * this.getLangd());
-        return vatskebehov;*/
+    @Override                               //Polymorfism
+    public double raknaUtVatskebehov() {
         return (0.1 + (0.2 * this.getLangd()));
     }
 
-    @Override
-    public void printMe() {             //Polymorfism
+    @Override                               //Polymorfism
+    public void printMe() {
         System.out.println("Köttätande Växt{" +
                 "namn='" + this.getNamn() + '\'' +
                 ", langd=" + this.getLangd() +
                 '}');
     }
 
-    @Override
+    @Override                               //Polymorfism
     public String vaxtInfo() {
         String message = String.format("Växttyp: " + vaxtTyp +
                 ", namn='" + this.getNamn() + '\'' +

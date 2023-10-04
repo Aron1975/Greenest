@@ -1,47 +1,37 @@
 package Greenest;
 
-public class Palmer extends Vaxter{//} implements VaxtInterface { //implementerar interface
+public class Palmer extends Vaxter{
 
-    private String vaxtTyp = "Palm";
-    //private String vatskeTyp = "Kranvatten";  //inkapsling, privata variabler med accessors get.., set..
+    private String vaxtTyp = "Palm";  //inkapsling, privata variabler med accessors get.., set..
+
     private VatskeTyp vatskeTyp = VatskeTyp.KRANVATTEN;
 
-    public Palmer() {
+    public Palmer() {               //Polymorfism
     }
 
-    //Polymorfism
-    public Palmer(String namn) {
+    public Palmer(String namn) {    //Polymorfism
         super(namn);
     }
-    //Polymorfism
-    public Palmer(String namn, double langd) {
+
+    public Palmer(String namn, double langd) {  //Polymorfism
         super(namn, langd);
     }
 
-    public VatskeTyp getVatskeTyp() {  //inkapsling, Polymorfism
+    public VatskeTyp getVatskeTyp() {    //inkapsling, Polymorfism
         return vatskeTyp;
     }
 
-    public String getVaxtTyp() {
+    public String getVaxtTyp() {         //inkapsling, Polymorfism
         return vaxtTyp;
     }
 
     @Override
     public double raknaUtVatskebehov() {  //Polymorfism
-        /*double vatskebehov;
-        vatskebehov = 0.5 * this.getLangd();
-        return vatskebehov;*/
         return (0.5 * this.getLangd());
     }
 
-    /*@Override
-    public void printMe() {     //Polymorfism
-        System.out.println("Palm{" +
-                "namn='" + this.getNamn() + '\'' +
-                ", langd=" + this.getLangd() +
-                '}');
-    }*/@Override
-    public void printMe() {     //Polymorfism
+    @Override                       //Polymorfism
+    public void printMe() {
         System.out.println("Palm{" +
                 "namn='" + this.getNamn() + '\'' +
                 ", langd=" + this.getLangd() + "m" +
@@ -50,7 +40,7 @@ public class Palmer extends Vaxter{//} implements VaxtInterface { //implementera
                 '}');
     }
 
-    @Override
+    @Override                       //Polymorfism
     public String vaxtInfo() {
         String message = String.format("Växttyp: " + vaxtTyp +
                 ", namn='" + this.getNamn() + '\'' +

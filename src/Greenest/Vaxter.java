@@ -5,7 +5,7 @@ public abstract class Vaxter implements VaxtInterface {
     private String namn;        //inkapsling
     private double langd;       //inkapsling
 
-    public Vaxter() {       //Polymorfism
+    public Vaxter() {           //Polymorfism
     this.namn = "Anonymus";
     this.langd = 1;
     }
@@ -20,31 +20,33 @@ public abstract class Vaxter implements VaxtInterface {
         this.langd = langd;
     }
 
-    public String getNamn() {           //inkapsling
+    public String getNamn() {            //inkapsling
         return namn;
-    }
+    }                //inkapsling
 
-    public void setNamn(String namn) {      //inkapsling
+    public void setNamn(String namn) {   //inkapsling
         this.namn = namn;
-    }
+    }   //inkapsling
 
-    public double getLangd() {      //inkapsling
+    public double getLangd() {           //inkapsling
         return langd;
-    }
+    }                //inkapsling
 
-    public void setLangd(double langd) {        //inkapsling
+    public void setLangd(double langd) {          //inkapsling
         this.langd = langd;
-    }
+    }   //inkapsling
 
     public abstract VatskeTyp getVatskeTyp();//{  //Polymorfism,
+
+    public abstract String getVaxtTyp();          //Polymorfism
 
     //@Override
     public abstract double raknaUtVatskebehov();    //Polymorfism
 
     @Override
-    public abstract String vaxtInfo();   //Polymorfism
+    public abstract String vaxtInfo();       //Polymorfism
 
-    public void printMe(){          //Polymorfism
+    public void printMe(){                   //Polymorfism
         System.out.println("Vaxter{" +
                 "namn='" + namn + '\'' +
                 ", langd=" + langd +
